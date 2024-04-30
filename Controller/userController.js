@@ -64,40 +64,6 @@ export const getUserById = async (req, res, next) => {
   }
 };
 
-// export const updateUser = async (req, res, next) => {
-//   try {
-//       const query = { _id: req.params._id }; 
-//       const updateData = req.body.toLowerCase(); 
-//       const existingUser = await userService.userFindOne({_id:query});
-
-//       if (!existingUser) {
-//         throw new NotFoundError("User not found");
-//       }
-//       const userWithSameEmail = await userService.userFindOne({ email: updateData });
-
-//       // if (userWithSameEmail && userWithSameEmail._id.toString() !== query) {
-//       //   throw new BadRequestError("Email already exists for another user");
-//       // }
-
-//       if (existingUser.email.toLowerCase() !== updateData) {
-//         existingUser.email = updateData;
-//         await existingUser.save();
-//       }
-
-//       return handleResponse(res, 200, "User email updated successfully", existingUser);
-  
-//       // const updatedUser = await userService.updateUser(query, updateData);
-//       // return handleResponse(res, 200, "User updated successfully");
-//   } catch (error) {
-//       next(error);
-//   }
-// };
-
-
-
-
-
-
 export const updateUser = async (req, res, next) => {
   try {
     const userId = req.params._id;
